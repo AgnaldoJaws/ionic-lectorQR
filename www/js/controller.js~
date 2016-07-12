@@ -1,0 +1,11 @@
+angular.module('lectorQR.controllers', ['ionic', 'ngCordova'])
+	.controller("lectorController", function($scope, $cordovaBarcodeScanner){
+	$scope.leerCodigo = function(){
+	alert('Click funcionando');
+		$cordovaBarcodeScanner.scan().then (function (imagemEscaneada){
+			   alert(imagemEscaneada.text);
+			}, function (error){
+			   alert("Erro na palicação" + error);
+			});
+		}
+	});
